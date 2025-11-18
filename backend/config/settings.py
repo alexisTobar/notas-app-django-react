@@ -23,14 +23,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-qc&*7k241(svuqr#1iqh&py*6*12dv7^*0el5cq-cxcgh%-w+#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get('DEBUG', '1') == '1'
 
 # Le decimos que confíe en tu PC local Y en tu nueva URL de Railway
 ALLOWED_HOSTS = [
     'localhost', 
     '127.0.0.1', 
-    'notas-app-django-react-production.up.railway.app' # <-- ¡AGREGA ESTA LÍNEA!
-    'notas-app-django-react.vercel.app'
+    'notas-app-django-react-production.up.railway.app',
+    'notas-app-django-react.vercel.app' # <-- ¡La de Vercel!
 ]
 
 # --- ¡AQUÍ ESTÁ LA CORRECCIÓN! ---
@@ -138,23 +138,16 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
+# 4. ¡EL ARREGLO DE STATIC (CSS/JS)!
+# (Al final del archivo)
 STATIC_URL = 'static/'
-
-# --- ¡AQUÍ ESTÁ LA CORRECCIÓN! ---
-
-# 'STATIC_ROOT = ...'
-# Le dice a Django: "Cuando ejecutes 'collectstatic',
-# junta todos los archivos CSS/JS del Admin en una carpeta llamada 'staticfiles'".
-STATIC_ROOT = BASE_DIR / 'staticfiles'
-
-# 'STATICFILES_STORAGE = ...'
-# Le dice a Whitenoise que maneje esos archivos de forma eficiente (comprimida).
+STATIC_ROOT = BASE_DIR / 'staticfiles' # <-- ¡Esta línea es VITAL para el Build!
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Al final del archivo
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173", # <-- DEBE ESTAR AQUÍ
-    "https://notas-app-django-react.vercel.app"
+    "http://localhost:5173", 
+    "https://notas-app-django-react.vercel.app" # <-- ¡Añade esta!
 ]

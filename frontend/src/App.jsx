@@ -7,8 +7,10 @@ import './App.css';
 import CreationForm from './CreationForm.jsx';
 
 // URL base de tu API de Django (donde está el ModelViewSet)
-const API_URL = 'https://notas-app-django-react-production.up.railway.app/api/notas/';
+// frontend/src/App.jsx
 
+// ¡LA URL DE PRODUCCIÓN!
+const API_URL = 'https://notas-app-django-react-production.up.railway.app/api/notas/';
 // --- 2. EL COMPONENTE PRINCIPAL 'App' ---
 
 function App() {
