@@ -32,6 +32,13 @@ ALLOWED_HOSTS = [
     'notas-app-django-react-production.up.railway.app' # <-- ¡AGREGA ESTA LÍNEA!
 ]
 
+# --- ¡AQUÍ ESTÁ LA CORRECCIÓN! ---
+# 'CSRF_TRUSTED_ORIGINS'
+# Le dice a Django que SÍ confíe en los formularios (POST)
+# que vengan de su propio dominio.
+CSRF_TRUSTED_ORIGINS = [
+    'https://notas-app-django-react-production.up.railway.app'
+]
 
 # Application definition
 
