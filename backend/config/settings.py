@@ -30,6 +30,7 @@ ALLOWED_HOSTS = [
     'localhost', 
     '127.0.0.1', 
     'notas-app-django-react-production.up.railway.app' # <-- ¡AGREGA ESTA LÍNEA!
+    'notas-app-django-react.vercel.app'
 ]
 
 # --- ¡AQUÍ ESTÁ LA CORRECCIÓN! ---
@@ -155,4 +156,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Al final del archivo
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173", # <-- DEBE ESTAR AQUÍ
+    "https://notas-app-django-react.vercel.app"
 ]
