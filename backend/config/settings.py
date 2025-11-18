@@ -25,7 +25,12 @@ SECRET_KEY = 'django-insecure-qc&*7k241(svuqr#1iqh&py*6*12dv7^*0el5cq-cxcgh%-w+#
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# Le decimos que confíe en tu PC local Y en tu nueva URL de Railway
+ALLOWED_HOSTS = [
+    'localhost', 
+    '127.0.0.1', 
+    'notas-app-django-react-production.up.railway.app' # <-- ¡AGREGA ESTA LÍNEA!
+]
 
 
 # Application definition
