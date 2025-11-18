@@ -1,0 +1,25 @@
+/* Archivo: frontend/src/index.css */
+
+/* Importamos la fuente moderna */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* Reseteo y configuración principal */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #121212;
+  /* Fondo modo oscuro */
+  color: #f4f7f6;
+  /* Texto claro */
+}
+
+a {
+  color: #00C6FF;
+  /* Links en azul neón */
+  text-decoration: none;
+}
