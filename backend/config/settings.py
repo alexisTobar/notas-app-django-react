@@ -131,12 +131,15 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 # --- ¡AQUÍ ESTÁ LA CORRECCIÓN! ---
-# STATIC_ROOT es VITAL en producción. Le dice a 'collectstatic' dónde guardar los archivos.
+
+# 'STATIC_ROOT = ...'
+# Le dice a Django: "Cuando ejecutes 'collectstatic',
+# junta todos los archivos CSS/JS del Admin en una carpeta llamada 'staticfiles'".
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
+# 'STATICFILES_STORAGE = ...'
+# Le dice a Whitenoise que maneje esos archivos de forma eficiente (comprimida).
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-# Default primary key field type
-# https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
